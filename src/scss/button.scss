@@ -1,0 +1,16 @@
+.btn-cart {
+  @include button(#00ade4 , #025975);
+}
+
+.btn-order {
+  @include button(#29d807 , #01880a);
+}
+
+.btn-del {
+  outline: none;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border: none;
+  background: url(../img/del_ico.png) no-repeat center;
+}

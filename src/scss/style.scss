@@ -1,0 +1,18 @@
+@import "_mixin.scss";
+@import "button";
+@import "header";
+@import "footer";
+@import "page";
+@import "basket-aside";
+@import "product";
+
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.wrapper {
+  min-height: calc(100vh - 125px);
+}

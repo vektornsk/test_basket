@@ -1,0 +1,41 @@
+.basket-aside {
+  border: 1px solid #d4d4d4;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%;
+  &.fixed {
+    position: fixed;
+    max-width: 226px;
+    top: 0;
+  }
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    margin-left: 17px;
+    letter-spacing: 0.45px;
+  }
+  &__list {
+    margin-top: 30px;
+  }
+  &__list-item {
+    margin-bottom: 18px;
+  }
+  &__sum {
+    margin-top: 30px;
+    border-top: 1px solid #d4d4d4;
+    text-align: right;
+    padding-top: 15px;
+    letter-spacing: 0.3px;
+    span {
+      font-weight: bold;
+    }
+  }
+  &__btn {
+    margin-top: 33px;
+  }
+}

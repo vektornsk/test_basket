@@ -1,0 +1,7 @@
+.footer {
+  height: 125px;
+  background: #10546b;
+  &__container {
+    @include container;
+  }
+}
