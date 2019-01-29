@@ -9,11 +9,6 @@ class Basket {
         document.addEventListener('click', event => {
             let target = event.target;
 
-            if (target.attributes['data-del']) {
-                let id = Number(target.getAttribute('data-del'));
-                this.remove(id);
-            }
-
             if (target.classList.contains("btn-order")) {
                 alert(`
                     "Вы добавили в корзину [${this.list.map(e => e.name)}] на сумму [${this.list.reduce(((sum, e) => sum + e.price), 0)}]"
@@ -41,8 +36,12 @@ class Basket {
         this.render();
     }
 
+    onClick(id) {
+        this.remove(id);
+    }
 
-    renderItem(product) {
+
+    renderProduct(product) {
         let fragment = document.createDocumentFragment();
         let basket_aside__list_item = document.createElement("DIV");
         basket_aside__list_item.classList.add('basket-aside__list-item');
@@ -55,7 +54,7 @@ class Basket {
 
         let btn_del = document.createElement("BUTTON");
         btn_del.classList.add('btn-del');
-        btn_del.dataset.del = product.id;
+        btn_del.addEventListener("click", this.onClick.bind(this, product.id));
 
         let product_flat__title = document.createElement("DIV");
         product_flat__title.classList.add('product-flat__title');
@@ -83,7 +82,7 @@ class Basket {
             container.removeChild(container.firstChild);
         }
         if (this.list.length) {
-            let tmpList = this.list.map(el => this.renderItem(el));
+            let tmpList = this.list.map(el => this.renderProduct(el));
             tmpList.forEach((e) => container.appendChild(e));
 
         }
